@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Bruno57.Domain.Factory" />
+        <PackageReference Include="Bruno57.Domain.Factory.Abstractions" />
+        <PackageReference Include="Bruno57.Domain.Foundations" />
+        <PackageReference Include="Bruno57.Repository" />
+        <PackageReference Include="Bruno57.Repository.Abstractions" />
+        <PackageReference Include="Bruno57.ResultPattern.Foundations" />
+        <PackageReference Include="coverlet.collector" />
+        <PackageReference Include="FluentAssertions" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="Moq" />
+        <PackageReference Include="xunit" />
+        <PackageReference Include="xunit.runner.visualstudio">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Infrastructure\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\src\Presentation\SampleApi\SampleApi.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CleanArchitecture.Shared\CleanArchitecture.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bruno57.Domain.Factory" />
+    <PackageReference Include="Bruno57.Domain.Factory.Abstractions" />
+    <PackageReference Include="Bruno57.Domain.Foundations" />
+    <PackageReference Include="Bruno57.Repository" />
+    <PackageReference Include="Bruno57.Repository.Abstractions" />
+    <PackageReference Include="Bruno57.ResultPattern.Foundations" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<ApiDocsFolder>ApiDocumentations/V1</ApiDocsFolder>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Extensions\**" />
+		<Compile Remove="Handlers\**" />
+		<Compile Remove="Validations\**" />
+		<Content Remove="Extensions\**" />
+		<Content Remove="Handlers\**" />
+		<Content Remove="Validations\**" />
+		<EmbeddedResource Remove="Extensions\**" />
+		<EmbeddedResource Remove="Handlers\**" />
+		<EmbeddedResource Remove="Validations\**" />
+		<None Remove="Extensions\**" />
+		<None Remove="Handlers\**" />
+		<None Remove="Validations\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Asp.Versioning.Http" />
+		<PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
+		<PackageReference Include="Bruno57.Domain.Factory" />
+		<PackageReference Include="Bruno57.Domain.Factory.Abstractions" />
+		<PackageReference Include="Bruno57.Domain.Foundations" />
+		<PackageReference Include="Bruno57.Repository" />
+		<PackageReference Include="Bruno57.Repository.Abstractions" />
+		<PackageReference Include="Bruno57.ResultPattern.Foundations" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+		<PackageReference Include="NSwag.AspNetCore" />
+		<PackageReference Include="NSwag.Generation.WebApi" />
+		<PackageReference Include="NSwag.MSBuild">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Infrastructure\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\UseCases\CleanArchitecture.UseCases\CleanArchitecture.UseCases.csproj" />
+	</ItemGroup>
+
+	<Target Name="NSwag" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Debug'">
+		<Exec EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development" Command="$(NSwagExe_Net80) run Swagger/nswag.json /variables:Configuration=$(Configuration),DocumentVersion=v3" />
+	</Target>
+
+</Project>

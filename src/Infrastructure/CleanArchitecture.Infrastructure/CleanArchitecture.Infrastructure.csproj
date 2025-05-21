@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>This assembly must 'only' be referenced by the 'Presentation' layer for Service Registration purpopses. 
+      Any other usage of this assembly is violation of dependency rules defined by Clean Architecture</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bruno57.Domain.Factory" />
+    <PackageReference Include="Bruno57.Domain.Factory.Abstractions" />
+    <PackageReference Include="Bruno57.Domain.Foundations" />
+    <PackageReference Include="Bruno57.Repository" />
+    <PackageReference Include="Bruno57.Repository.Abstractions" />
+    <PackageReference Include="Bruno57.ResultPattern.Foundations" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CleanArchitecture.Shared\CleanArchitecture.Shared.csproj" />
+    <ProjectReference Include="..\..\Core\CleanArchitecture.Core\CleanArchitecture.Core.csproj" />
+  </ItemGroup>
+
+</Project>

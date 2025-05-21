@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <None Remove="Feature1\GetSomeDataForSomeId\NewFile1.txt" />
+    <None Remove="NewFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bruno57.Domain.Factory" />
+    <PackageReference Include="Bruno57.Domain.Factory.Abstractions" />
+    <PackageReference Include="Bruno57.Domain.Foundations" />
+    <PackageReference Include="Bruno57.Repository" />
+    <PackageReference Include="Bruno57.Repository.Abstractions" />
+    <PackageReference Include="Bruno57.ResultPattern.Foundations" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\CleanArchitecture.Core\CleanArchitecture.Core.csproj" />
+  </ItemGroup>
+
+</Project>
